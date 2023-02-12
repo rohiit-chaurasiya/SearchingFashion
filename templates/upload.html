@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>SearchingFashion</title>
+  </head>
+  <body style="height: 100vh">
+    <div class="navbar">
+      <ul>
+        <li style="align-self: flex-start">
+          <a href="/" style="text-decoration: none; color: #ffffff">
+            <h2>searchingFashion</h2>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="cardLogin">
+      <form method="POST" enctype="multipart/form-data">
+        <p class="head">Search Something?</p>
+        <p class="desc">Enter the details below:</p>
+        <div class="inp-cont">
+          <input type="text" name="room" placeholder="Item Name" />
+          <!-- <label class="inp-label" >Room No</label> -->
+        </div>
+        <div class="inp-cont">
+          <input type="text" name="store" placeholder="Address" />
+          <!-- <label class="inp-label" >Store No</label> -->
+        </div>
+        <div class="inp-cont">
+          <input type="text" name="rack" placeholder="Price" />
+          <!-- <label class="inp-label" >Rack No</label> -->
+        </div>
+        <div style="width: 100%">
+          <input type="file" name="query_img" />
+        </div>
+        <input type="submit" class="btn" style="margin-top: 10%" />
+      </form>
+    </div>
+  </body>
+</html>

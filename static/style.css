@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background-color: black;
+    background-image: url("bg.png");
+    background-repeat: no-repeat;
+    background-size: 100vw auto;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.navbar{
+  height: 8vh;
+  width: 100%;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2%;
+  padding-left: 2%;
+  padding-top: 1%;
+  align-content: center;
+}
+
+ul li{
+  align-content: center;
+}
+
+.container{
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  opacity: 100%;
+  background: radial-gradient(50% 50% at 50% 50%, #121212 0%, rgba(18, 18, 18, 0.75) 75%);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 2%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+
+p.head{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 50px;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+p.desc{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 34px;
+  color: #e5e5e5;
+  text-align: center;
+  letter-spacing: 0.75px;
+  padding: 5%;
+}
+
+.btn{
+  background: #307FE2;
+  border-radius: 28px;
+  width: 70%;
+  height: auto;
+  padding: 3%;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  margin: 5%;
+}
+
+p.desc1{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 28px;
+  color: #e5e5e5;
+  text-align: center;
+  letter-spacing: 0.75px;
+  padding: 3%;
+}
+
+
+.resultcard{
+  width: 1000px;
+  height: auto;
+  /* display: flex; */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  opacity: 100%;
+  background: radial-gradient(50% 50% at 50% 50%, #121212 0%, rgba(18, 18, 18, 0.75) 75%);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.imgBx {
+  position: relative;
+  width: 200px;
+  height: 240px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 0px solid rgba(0, 0, 0, 0.25);
+}
+
+.imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+figcaption{
+  display: block;
+  color: #ffffff;
+  margin-top: 95%;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 50px;
+  letter-spacing: 1px;
+}
+
+
+input[type=file]::file-selector-button {
+  background: #307FE2;
+  border-radius: 28px;
+  width: 50%;
+  height: auto;
+  padding: 3%;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  margin: 5%;
+}
+
+
+
+
+
+.cardLogin{
+  width: 500px;
+  height: 500px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  opacity: 100%;
+  background: radial-gradient(50% 50% at 50% 50%, #121212 0%, rgba(18, 18, 18, 0.75) 75%);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 2%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+
+
+/* text field */
+
+.inp-cont {
+  position: relative;
+  padding: 3%;
+}
+
+
+input[type="text"]::placeholder{
+  position: absolute;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: #c4c4c4;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.1s ease-out;
+  pointer-events: none;
+}
+
+
+input[type="text"] {
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  outline: none;
+  border: none;
+  transition: 0.1s ease-out;
+  width: 306px;
+  height: 48px;
+  color: #ffffff;
+  padding: 0 16px;
+  background: rgba(158, 158, 158, 0.25);
+  border-radius: 10px;
+}
+input[type="text"]:focus {
+  /* border: 3px solid rgba(48, 127, 226, 0.6); */
+  background: rgba(158, 158, 158, 0.35);
+}
+input[type="text"]:focus::placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 100%;
+  color: #999999;
+  top: 25%;
+}
+
+
+
+
+
