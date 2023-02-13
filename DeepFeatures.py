@@ -3,6 +3,7 @@ from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 from tensorflow.keras.models import Model
 import numpy as np
 
+
 class DeepFeatures:
     def __init__(self):
         base = VGG16(weights = 'imagenet')
