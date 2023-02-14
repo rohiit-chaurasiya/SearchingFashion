@@ -19,11 +19,11 @@ pip install requirement.txt
 
 
 Python DeepFeatures.py
-Call and instante our VGG16 model that helps in Deep Feature synthesis
+Call and instante our VGG16 model that helps in Deep Feature synthesis.
 
 Python SaveFeatures.py
-Iterate through our database and save all the deep features extracted
+Iterate through our database and save all the deep features extracted.
 
 Python Server.py
-Retrieve top 5 lost objects and display on the web
+Retrieve top 5 lost objects and display on the web.
 
