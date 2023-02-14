@@ -1,6 +1,6 @@
 # SearchingFashion
 
-Machine Learning Based Project for Image Classification &amp; Video Processing . Currently ongoing project
+Machine Learning Based Project for Image Classification &amp; Video Processing . Currently ongoing project--
 
 
 Git Clone this repo - git clone https://github.com/RohitAayushmaan/SearchingFashion
