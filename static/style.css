@@ -6,7 +6,7 @@
 
 body{
     background-color: black;
-    background-image: url("bg.png");
+    background-image: url("bg3.jpg");
     background-repeat: no-repeat;
     background-size: 100vw auto;
     background-attachment: fixed;
@@ -38,12 +38,14 @@ ul li{
   align-content: center;
 }
 
+
 .container{
   width: 500px;
   height: 400px;
-  display: flex;
-  flex-direction: column;
+
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   opacity: 100%;
@@ -54,6 +56,20 @@ ul li{
   margin-bottom: 5%;
   margin-top: 5%;
 }
+
+.col-6 {
+        width: 48%;
+        margin-bottom: 10px;
+        background-color: #ccc;
+        padding: 10px;
+      }
+
+.row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 10px;
+      }
 
 
 p.head{

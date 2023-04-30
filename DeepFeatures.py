@@ -1,7 +1,10 @@
+from tensorflow import keras
+import tensorflow.keras as keras
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 from tensorflow.keras.models import Model
 import numpy as np
+import tensorflow.keras as keras
 
 
 class DeepFeatures:

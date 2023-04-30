@@ -11,43 +11,64 @@
     <div class="navbar">
         <ul>
             <li style="align-self: flex-start;">
-                <h2>SearchingFashion</h2>
+                <h1>SearchingFashion</h1>
             </li>
             <li style="align-self: flex-end;">
                 <a href="/upload"><button class="btn" style="width: 150px;"> Upload Items </button></a>
             </li>
         </ul>
     </div>
-    <div class="container" id="search">
-        <form method="POST" enctype="multipart/form-data" id="search">
-            <p class="head">Search Something?</p>
-            <p class="desc">Input your image below:</p>
-            <div style="width: 100%;">
-                <input type="file" name="query_img">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div id="search">
+                    <form method="POST" enctype="multipart/form-data" id="search">
+                        <p class="head">Search Something?</p>
+                        <p class="desc">Input your image below:</p>
+                        <div style="width: 100%;">
+                            <input type="file" name="query_img">
+                        </div>
+                        <input type="submit" class="btn" style="margin-top: 10%;"></a>
+                    </form>
+                </div>
             </div>
-            <input type="submit" class="btn" style="margin-top: 10%;"></a>
-            <a href="/upload" style="text-decoration: none;"><p class="desc1">Looking to upload a new item ?</p></a>
-        </form>
+<!--            <div class="col-sm-6">-->
+<!--                <div id="videosearch">-->
+<!--                    <form method="POST" enctype="multipart/form-data" id="videosearch" action="/videoSearch">-->
+<!--                        <p class="head">Search Something?</p>-->
+<!--                        <p class="desc">Input your image below:</p>-->
+<!--                        <div style="width: 100%;">-->
+<!--                            <input type="file" name="query_video">-->
+<!--                        </div>-->
+<!--                        <input type="submit" class="btn" style="margin-top: 10%;"></a>-->
+<!--                        <a href="/upload" style="text-decoration: none;"><p class="desc1">Looking to upload a new item ?</p></a>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
     </div>
+
     <div class="resultcard" id="results">
         <p class="head">We found these</p>
-        <p class="desc">Your query image:</p>
-        {% if query_path %}
-            <figure class="imgBx">
-                <img src="{{ query_path }}" alt="Query Image">
-                <figcaption>Your input image</figcaption>
-            </figure>
-            {% endif %}
         <p class="desc">Matching results:</p>
-<div class="class-img" style="display: inline;">
+    <div class="class-img" style="display: inline;">
         {% for score in scores %}
             <figure class="imgBx">
                 <img src="{{ score[1] }}" alt="Similar Image">
                 <figcaption>{{ score[0] }}</figcaption>
-                </figure>
+            </figure>
+            <a href="{{ score[0] }}">Buy Now to Click here {{ score[0] }}</a>
         {% endfor %}
+
+        {% for image_url, image_name in image_urls %}
+        <figure class="imgBx">
+		    <img src="{{ image_url }}" alt="My Image">
+        </figure>
+        <a href="{{ image_name }}" >Buy Now to Click here {{ image_name }}</a>
+	    {% endfor %}
     </div>
         </div>
-    </div>
+
+</div>
 </body>
 </html>
