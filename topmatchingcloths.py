@@ -24,14 +24,14 @@ for root, dirs, files in os.walk(reference_database_path):
 
 # Loop over the extracted clothing items
 for clothing_item_file in os.listdir(extracted_clothing_items_path):
-    # Open the clothing item image
+    
     clothing_item_path = os.path.join(extracted_clothing_items_path, clothing_item_file)
     clothing_item = Image.open(clothing_item_path)
-    # Resize the clothing item to the same size as the reference images
+    
     resized_clothing_item = clothing_item.resize((224, 224))
-    # Convert the clothing item to a numpy array
+    
     clothing_item_array = np.array(resized_clothing_item)
-    # Reshape the clothing item array to have the same number of columns as the reference image arrays
+    
     clothing_item_array = clothing_item_array.reshape(-1, 224 * 224 * 3)
     # Calculate the cosine similarity between the clothing item and each reference image
     similarity_scores = []
@@ -41,7 +41,7 @@ for clothing_item_file in os.listdir(extracted_clothing_items_path):
         similarity_scores.append((reference_image_path, similarity_score))
     # Sort the similarity scores in descending order
     similarity_scores.sort(key=lambda x: x[1], reverse=True)
-    # Create a new folder for the current clothing item
+   
     item_name = os.path.splitext(clothing_item_file)[0]
     item_folder_path = top_matches_folder_path
     if not os.path.exists(item_folder_path):
