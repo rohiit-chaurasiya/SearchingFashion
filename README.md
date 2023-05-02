@@ -25,5 +25,5 @@ Python SaveFeatures.py
 Iterate through our database and save all the deep features extracted.
 
 Python Server.py
-Retrieve top 5 lost objects and display on the web
+Retrieve top objects and display on the web
 
