@@ -1,74 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <title>searchingFashion</title>
-</head>
-<body>
-    <div class="navbar">
-        <ul>
-            <li style="align-self: flex-start;">
-                <h1>SearchingFashion</h1>
-            </li>
-            <li style="align-self: flex-end;">
-                <a href="/upload"><button class="btn" style="width: 150px;"> Upload Items </button></a>
-            </li>
-        </ul>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div id="search">
-                    <form method="POST" enctype="multipart/form-data" id="search">
-                        <p class="head">Search Something?</p>
-                        <p class="desc">Input your image below:</p>
-                        <div style="width: 100%;">
-                            <input type="file" name="query_img">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        <title>searchingFashion</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    </head>
+    <body>
+        {% include 'header.html' %}
+
+        <div class="box" style="margin-top: -20px;">
+            <div class="container">
+                <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <div class="box-part text-center rounded">
+                                <i >
+                                  <img style="margin-top: -20px;" src="static/sm-m.png" alt="camera icon">
+                                </i>
+                                <div id="search">
+                                  <form method="POST" enctype="multipart/form-data" id="search">
+                                    <p class="head font-weight-bold">Search Something?</p>
+                                    <p class="desc" >Input your image below:</p>
+                                    <div class="d-flex justify-content-center" style="margin-bottom:45">
+                                      <input type="file" name="query_img">
+                                    </div>
+                                    <input type="submit" class="btn btn-primary mt-3 d-block mx-auto">
+                                    <a href="/upload" style="text-decoration: none; margin-bottom:0px"><p class="desc1">Looking to upload a new item ?</p></a>
+
+                                  </form>
+                                </div>
+                             </div>
                         </div>
-                        <input type="submit" class="btn" style="margin-top: 10%;"></a>
-                    </form>
                 </div>
             </div>
-<!--            <div class="col-sm-6">-->
-<!--                <div id="videosearch">-->
-<!--                    <form method="POST" enctype="multipart/form-data" id="videosearch" action="/videoSearch">-->
-<!--                        <p class="head">Search Something?</p>-->
-<!--                        <p class="desc">Input your image below:</p>-->
-<!--                        <div style="width: 100%;">-->
-<!--                            <input type="file" name="query_video">-->
-<!--                        </div>-->
-<!--                        <input type="submit" class="btn" style="margin-top: 10%;"></a>-->
-<!--                        <a href="/upload" style="text-decoration: none;"><p class="desc1">Looking to upload a new item ?</p></a>-->
-<!--                    </form>-->
+        </div>
+        <!-------------------------------- result-------------------------------------->
+        <div class="container py-5">
+            <div class="row text-center text-white">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4">We found these</h1>
+                    <p class="lead mb-0">Matching results:</p>
+
+                </div>
+            </div>
+        </div><!-- End -->
+
+
+        <div class="container">
+            <div class="row text-center">
+                {% for score in scores %}
+                <!--  item -->
+                <div class="col-xl-4 col-sm-6 mb-5">
+                    <div class="bg-white rounded shadow-sm py-5 px-4">
+                        <img src="{{ score[1] }}" alt="" width="300" class=" rounded mb-3 ">
+                        <h5 class="mb-0">Palika Bazaar</h5>
+                        <span class="small text-uppercase text-muted">Sudhanshu Rajan Verma</span>
+                        <button type="button" class="btn btn-success btn-rounded">Buy now</button>
+                    </div>
+                </div><!-- End -->
+                {% endfor %}
+
+                {% for image_url, image_name in image_urls %}
+                <!--  item -->
+                <div class="col-xl-4 col-sm-6 mb-5">
+                    <div class="bg-white rounded shadow-sm py-5 px-4">
+                        <img src="{{ image_url }}" alt="" width="300" class=" rounded mb-3 ">
+                        <h5 class="mb-0">Sarojini Market, New Delhi</h5>
+                        <span class="small text-uppercase text-muted">Shivom Tyagi</span>
+                        <button type="button" class="btn btn-success btn-rounded">Buy now</button>
+                    </div>
+                </div><!-- End -->
+                {% endfor %}
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--        <div class="row">-->
+<!--  <div class="col align-self-center">-->
+<!--    <div id="search">-->
+<!--      <form method="POST" enctype="multipart/form-data" id="search">-->
+<!--        <p class="head">Search Something?</p>-->
+<!--        <p class="desc">Input your image below:</p>-->
+<!--        <div class="d-flex justify-content-center">-->
+<!--          <input type="file" name="query_img">-->
+<!--        </div>-->
+<!--        <input type="submit" class="btn btn-primary mt-3 d-block mx-auto">-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--        <div class="row" style="">-->
+<!--            <div class="col align-self-center">-->
+<!--        <div class="containerd" id="search">-->
+<!--            <form method="POST" enctype="multipart/form-data" id="search">-->
+<!--                <p class="head">Search Something?</p>-->
+<!--                <p class="desc">Input your image below:</p>-->
+<!--                <div style="width: 100%;">-->
+<!--                    <input type="file" name="query_img">-->
 <!--                </div>-->
+<!--                <input type="submit" class="btn" style="margin-top: 10%;"></a>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--                </div>-->
+
+<!--        </div>-->
+
+    <!--            <div class="col-sm-6">-->
+    <!--                <div id="videosearch">-->
+    <!--                    <form method="POST" enctype="multipart/form-data" id="videosearch" action="/videoSearch">-->
+    <!--                        <p class="head">Search Something?</p>-->
+    <!--                        <p class="desc">Input your image below:</p>-->
+    <!--                        <div style="width: 100%;">-->
+    <!--                            <input type="file" name="query_video">-->
+    <!--                        </div>-->
+    <!--                        <input type="submit" class="btn" style="margin-top: 10%;"></a>-->
+    <!--                        <a href="/upload" style="text-decoration: none;"><p class="desc1">Looking to upload a new item ?</p></a>-->
+    <!--                    </form>-->
+    <!--                </div>-->
+    <!--            </div>-->
+
+
+
+
+
+<!--        <div class="resultcard" id="results">-->
+<!--&lt;!&ndash;            <p class="head">We found these</p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p class="desc">Matching results:</p>&ndash;&gt;-->
+
+<!--        <div class="row">-->
+<!--        {% for score in scores %}-->
+<!--            <div class="col-md-4 mb-0">-->
+<!--                <figure class="imgBx">-->
+<!--                    <img src="{{ score[1] }}" alt="Similar Image" class="img-fluid">-->
+
+<!--                </figure>-->
+<!--                <a href="{{ score[0] }}">Buy Now to Click here {{ score[0] }}</a>-->
+
 <!--            </div>-->
-        </div>
-    </div>
+<!--        {% endfor %}-->
+<!--        </div>-->
 
-    <div class="resultcard" id="results">
-        <p class="head">We found these</p>
-        <p class="desc">Matching results:</p>
-    <div class="class-img" style="display: inline;">
-        {% for score in scores %}
-            <figure class="imgBx">
-                <img src="{{ score[1] }}" alt="Similar Image">
-                <figcaption>{{ score[0] }}</figcaption>
-            </figure>
-            <a href="{{ score[0] }}">Buy Now to Click here {{ score[0] }}</a>
-        {% endfor %}
+<!--        {% for image_url, image_name in image_urls %}-->
+<!--        <figure class="imgBx">-->
+<!--            <img src="{{ image_url }}" alt="My Image">-->
+<!--        </figure>-->
+<!--        <a href="{{ image_name }}" >Buy Now to Click here {{ image_name }}</a>-->
+<!--        {% endfor %}-->
 
-        {% for image_url, image_name in image_urls %}
-        <figure class="imgBx">
-		    <img src="{{ image_url }}" alt="My Image">
-        </figure>
-        <a href="{{ image_name }}" >Buy Now to Click here {{ image_name }}</a>
-	    {% endfor %}
-    </div>
-        </div>
+<!--        </div>-->
 
-</div>
-</body>
+
+
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    </body>
 </html>

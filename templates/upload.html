@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        <title>searchingFashion</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <title>SearchingFashion</title>
   </head>
   <body style="height: 100vh">
-    <div class="navbar">
-      <ul>
-        <li style="align-self: flex-start">
-          <a href="/" style="text-decoration: none; color: #ffffff">
-            <h2>searchingFashion</h2>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="cardLogin">
+    {% include 'header.html' %}
+    <div class="cardLogin" style="width: 60%; margin: 0 auto; margin-top:40px">
       <form method="POST" enctype="multipart/form-data">
-        <p class="head">Search Something?</p>
+        <p class="head" style="margin-top:80px">Search Something?</p>
         <p class="desc">Enter the details below:</p>
         <div class="inp-cont">
           <input type="text" name="room" placeholder="Item Name" />
@@ -43,5 +35,7 @@
         <input type="submit" class="btn" style="margin-top: 10%" />
       </form>
     </div>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
   </body>
 </html>

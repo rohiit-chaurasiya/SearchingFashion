@@ -6,6 +6,7 @@ from flask import Flask, request, render_template, url_for
 from pathlib import Path
 import subprocess
 import os
+from flask import Flask, render_template
 
 import cv2
 import torch
@@ -41,7 +42,7 @@ def index():
             ids = np.argsort(dists)[:5]
             scores = [(img_paths[id].stem, img_paths[id]) for id in ids]
 
-            return render_template('index.html', query_path=uploaded_img_path, scores=scores)
+            return render_template('index.html', query_path=uploaded_img_path, scores=scores,header="header.html")
         elif filename.endswith('.mp4'):
             # Define the folder containing the files
             folder1 = "clothing_items"
@@ -89,11 +90,11 @@ def index():
                     image_name = os.path.splitext(filename)[0]
                     image_urls.append((image_url, image_name))
 
-            return render_template('index.html', image_urls=image_urls)
+            return render_template('index.html', image_urls=image_urls,header="header.html")
         else:
-            return render_template('index.html')
+            return render_template('index.html',header="header.html")
     else:
-        return render_template('index.html')
+        return render_template('index.html',header="header.html")
 
 
 
@@ -156,6 +157,7 @@ def index():
 
 
 
+
 @app.route('/upload', methods=['GET','POST'])
 def upload():
     if request.method == 'POST':
@@ -172,9 +174,9 @@ def upload():
         fpath = Path("./static/feature")/(name + ".npy")
         np.save(fpath, feature)
 
-        return render_template('upload.html')
+        return render_template('upload.html',header="header.html")
     else:
-        return render_template('upload.html')
+        return render_template('upload.html',header="header.html")
 
 
 if __name__=="__main__":
