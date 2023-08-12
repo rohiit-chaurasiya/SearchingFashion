@@ -7,6 +7,8 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer.css') }}">
+
         <title>searchingFashion</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     </head>
@@ -24,7 +26,7 @@
                                 <div id="search">
                                   <form method="POST" enctype="multipart/form-data" id="search">
                                     <p class="head font-weight-bold">Search Something?</p>
-                                    <p class="desc" >Input your image below:</p>
+                                    <p class="desc" >Input your image/video below:</p>
                                     <div class="d-flex justify-content-center" style="margin-bottom:45">
                                       <input type="file" name="query_img">
                                     </div>
@@ -57,8 +59,8 @@
                 <div class="col-xl-4 col-sm-6 mb-5">
                     <div class="bg-white rounded shadow-sm py-5 px-4">
                         <img src="{{ score[1] }}" alt="" width="300" class=" rounded mb-3 ">
-                        <h5 class="mb-0">Palika Bazaar</h5>
-                        <span class="small text-uppercase text-muted">Sudhanshu Rajan Verma</span>
+                        <h5 class="mb-0">Myntra</h5>
+                        <span class="small text-uppercase text-muted">www.myntra.com</span>
                         <button type="button" class="btn btn-success btn-rounded">Buy now</button>
                     </div>
                 </div><!-- End -->
@@ -69,8 +71,8 @@
                 <div class="col-xl-4 col-sm-6 mb-5">
                     <div class="bg-white rounded shadow-sm py-5 px-4">
                         <img src="{{ image_url }}" alt="" width="300" class=" rounded mb-3 ">
-                        <h5 class="mb-0">Sarojini Market, New Delhi</h5>
-                        <span class="small text-uppercase text-muted">Shivom Tyagi</span>
+                        <h5 class="mb-0">Amazon</h5>
+                        <span class="small text-uppercase text-muted">www.amazon.in</span>
                         <button type="button" class="btn btn-success btn-rounded">Buy now</button>
                     </div>
                 </div><!-- End -->
@@ -79,12 +81,7 @@
 
             </div>
         </div>
-
-
-
-
-
-
+        {% include 'footer.html' %}
 
 
 
@@ -173,6 +170,7 @@
 
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
 
     </body>
 </html>

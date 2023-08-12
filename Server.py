@@ -68,6 +68,8 @@ def index():
             # Replace the file path with the path to your Python file
             file_path_1 = 'ExtractImageFromVideo.py'
             file_path_2 = 'topmatchingcloths.py'
+            file_path_3 = 'imagematching.py'
+
 
             # set the directory path where your images are stored
             folder_path = "top_matches"
@@ -79,6 +81,11 @@ def index():
             process_2 = subprocess.Popen(['python', file_path_2], stdout=subprocess.PIPE)
             process_2.wait()
 
+            process_3 = subprocess.Popen(['python', file_path_3], stdout=subprocess.PIPE)
+            process_3.wait()
+
+
+#---------------------------------------------------------------------------------------------------
             # get the path of the images folder
             images_folder = os.path.join(app.static_folder, 'top_matches')
 
