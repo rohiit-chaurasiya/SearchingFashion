@@ -172,7 +172,7 @@ threadpoolctl==3.1.0
 tokenizers==0.13.2
 toml==0.10.2
 toolz==0.12.0
-torch==1.12.0+cu116
+
 tornado==6.2
 tqdm==4.64.1
 transformers==4.16.2
