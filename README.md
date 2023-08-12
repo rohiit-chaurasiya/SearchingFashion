@@ -1,21 +1,22 @@
 # SearchingFashion
 
-Machine Learning Based Project for Image Classification &amp; Video Processing . Currently ongoing project--
+### Machine Learning Based Project for Image Classification &amp; Video Processing . Currently ongoing project--
  
 
-Git Clone this repo - git clone https://github.com/RohitAayushmaan/SearchingFashion
+##### Git Clone this repo - git clone https://github.com/RohitAayushmaan/SearchingFashion
 
-Run all this given command under \SearchingFashion Directory
+### Run all this given command under \SearchingFashion Directory
 
-Make Virtual Environment
+1. Make Virtual Environment
  
-pip install virtualenvwrapper-win
+2. pip install virtualenvwrapper-win
 
-mkvirtualenv envName
+3. mkvirtualenv envName
 
-workon envName
+4. workon envName
 
-pip install requirement.txt
+5. pip install requirement.txt
+
 
 
 Python DeepFeatures.py
