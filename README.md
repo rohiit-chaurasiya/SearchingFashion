@@ -1,5 +1,10 @@
 # SearchingFashion
 
+![searchingF](https://github.com/RohitAayushmaan/SearchingFashion/assets/52812829/a1a3ab78-d476-4198-baad-71ea4409d162)
+
+![o1](https://github.com/RohitAayushmaan/SearchingFashion/assets/52812829/b1597072-0477-4124-b4fe-88c7aa9edb93)
+
+
 This app is build with [Python]() , [Django](), [MySQL](), [HTML](), [CSS](), [JavaScript]() and [Bootstrap]().
 
 ## Machine Learning Based Project for Image Classification &amp; Video Processing .
@@ -29,7 +34,5 @@ Iterate through our database and save all the deep features extracted.
 
 Python Server.py
 Retrieve top objects and display on the web
-![searchingF](https://github.com/RohitAayushmaan/SearchingFashion/assets/52812829/a1a3ab78-d476-4198-baad-71ea4409d162)
 
-![o1](https://github.com/RohitAayushmaan/SearchingFashion/assets/52812829/b1597072-0477-4124-b4fe-88c7aa9edb93)
 
