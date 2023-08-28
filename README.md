@@ -5,7 +5,7 @@
 ![o1](https://github.com/RohitAayushmaan/SearchingFashion/assets/52812829/b1597072-0477-4124-b4fe-88c7aa9edb93)
 
 
-This app is build with [Python]() , [Django](), [MySQL](), [HTML](), [CSS](), [JavaScript]() and [Bootstrap]().
+This app is build with [Python]() , [Flask API](), [HTML](), [CSS](), and [Bootstrap]().
 
 ## Machine Learning Based Project for Image Classification &amp; Video Processing .
  
