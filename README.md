@@ -10,21 +10,21 @@ This app is build with [Python]() , [Django](), [MySQL](), [HTML](), [CSS](), [J
 ## Machine Learning Based Project for Image Classification &amp; Video Processing .
  
 
-##### Git Clone this repo - git clone https://github.com/RohitAayushmaan/SearchingFashion
+##### Git Clone this repo - 
+```sh
+git clone https://github.com/RohitAayushmaan/SearchingFashion
+```
 
 ### Run all this given command under \SearchingFashion Directory
+```sh 
+pip install virtualenvwrapper-win
 
-1. Make Virtual Environment
- 
-2. pip install virtualenvwrapper-win
+mkvirtualenv envName
 
-3. mkvirtualenv envName
+workon envName
 
-4. workon envName
-
-5. pip install requirement.txt
-
-
+pip install requirement.txt
+```
 
 Python DeepFeatures.py
 Call and instante our VGG16 model that helps in Deep Feature synthesis.
@@ -32,7 +32,9 @@ Call and instante our VGG16 model that helps in Deep Feature synthesis.
 Python SaveFeatures.py
 Iterate through our database and save all the deep features extracted.
 
+```sh
 Python Server.py
+```
 Retrieve top objects and display on the web
 
 
